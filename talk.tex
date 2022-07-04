@@ -17,6 +17,8 @@
 \usepackage{times}
 \usepackage{esvect}\renewcommand{\vec}[1]{\vv{#1}}
 \usepackage{setspace}\setstretch{1.5}
+\usepackage{pgfplots}\pgfplotsset{compat=1.17}
+\usepackage{siunitx}
 
 \title{The magic is always in the details}
 \subtitle{The search for new physics with the muon}
@@ -93,7 +95,40 @@
 
 \section{History of the measurement}
 
+% BNL-E821
+\newcommand{\amuBNL}{11659209} % 11659209.1
+% \newcommand{\amuBNLStat}{5.4}
+% \newcommand{\amuBNLSys}{3.3}
+\newcommand{\DamuBNL}{6}
+\newcommand{\numamuBNL}{\num{\amuBNL}}
+% \newcommand{\numamuBNLStat}{\num{\amuBNLStat}}
+% \newcommand{\numamuBNLSys}{\num{\amuBNLSys}}
+
+% FNAL 2021
+\newcommand{\amuFNAL}{11659204.0}
+\newcommand{\DamuFNAL}{5.4}
+\newcommand{\numamuFNAL}{\num{\amuFNAL}}
+
 \begin{frame}{\insertsection}
+  Exprimental measurements:
+  \begin{align*}
+    a^{\text{BNL-2016}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} \\
+    a^{\text{FNAL-2021}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{\insertsection}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        ]
+        \addplot[blue,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
+          (\amuBNL , 2) +- (\DamuBNL , 0)
+          (\amuFNAL, 1) +- (\DamuFNAL, 0)
+        };
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
