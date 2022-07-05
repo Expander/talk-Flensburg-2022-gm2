@@ -17,8 +17,45 @@
 \usepackage{times}
 \usepackage{esvect}\renewcommand{\vec}[1]{\vv{#1}}
 \usepackage{setspace}\setstretch{1.5}
+\usepackage{tikz}
 \usepackage{pgfplots}\pgfplotsset{compat=1.17}
 \usepackage{siunitx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetikzlibrary{calc,decorations.markings}
+
+% default arrow style
+\tikzset{>=latex}
+
+% arrows on the field lines
+\tikzstyle directed=[postaction={decorate,decoration={markings,
+  mark=at position .2 with {\arrowreversed[scale=1.5]{>}},
+  mark=at position .8 with {\arrowreversed[scale=1.5]{>}}}}]
+
+% field lines
+\tikzstyle fLines=[thick,directed]
+
+\newcommand{\magnet}[3]{%
+    \def\lmag{#1}  % length of magnet
+    \def\wmag{#2}  % thickness of magnet
+    \def\nc{#3}    % no. of lines = 2*\nc+1
+    \begin{scope}
+      \coordinate (A) at (-\lmag/2,\wmag/2);
+      \coordinate (B) at (\lmag/2,-\wmag/2);
+      \draw[fill, color=green](A) rectangle ++(\lmag/2,-\wmag) node[black,midway]{S};
+      \draw[fill, color=red](0,-\wmag/2) rectangle ++(\lmag/2,\wmag) node[black,midway]{N};
+      \clip (-5,-3) rectangle (5,3);
+      \foreach \r in {1,...,\nc}{
+        \draw[fLines]($(A)-(0,0.5*\r*\wmag/\nc)$) arc(({270-asin(\lmag/(2*\r))}):({-90+asin(\lmag/(2*\r))}):\r);
+        \draw[fLines]($(B)+(0,0.5*\r*\wmag/\nc)$) arc(({90-asin(\lmag/(2*\r))}):({-270+asin(\lmag/(2*\r))}):\r); }
+      \draw[fLines] (-\lmag/2,0) -- ++(-6,0);
+      \draw[fLines] (\lmag/2,0) ++(6,0)--(\lmag/2,0);
+    \end{scope}
+    \draw[blue,->,line width=3] (-\nc/8,2) -- ++(\nc/4,0) node[midway,above] {$\vec{m}$};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\Exp}{\text{Exp}}
 \newcommand{\SM}{\text{SM}}
@@ -73,7 +110,7 @@
 
 \section{Magnetism}
 
-\begin{frame}{\insertsection}
+\begin{frame}{\insertsection: permanent magnet}
   \begin{center}
     \includegraphics[width=0.9\textwidth]{img/bar_magnet_foto}
 
@@ -81,14 +118,36 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{\insertsection}
-  Mehrere Abbildungen der folgenden Form, mit verschiedener
-  Feldstärke, zzgl.\ entsprechendem magnetic moment:
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{img/bar_magnet}
+\begin{frame}{\insertsection: magnetic moment $\vec{m}$}
+  \begin{tikzpicture}
+    \only<1>{\magnet{1.8}{0.5}{3}}%
+    \only<2>{\magnet{1.8}{0.5}{4}}%
+    \only<3>{\magnet{1.8}{0.5}{5}}%
+    \only<4>{\magnet{1.8}{0.5}{6}}%
+    \only<5>{\magnet{1.8}{0.5}{7}}%
+    \only<6>{\magnet{1.8}{0.5}{8}}%
+    \only<7>{\magnet{1.8}{0.5}{9}}%
+    \only<8>{\magnet{1.8}{0.5}{10}}%
+    \only<9>{\magnet{1.8}{0.5}{11}}%
+  \end{tikzpicture}  
+\end{frame}
 
-    \footnotesize [Geek3, CC-SA-3.0]
-  \end{center}
+% \begin{frame}{\insertsection}
+%   Magnetisches Moment $\vec{m}$:
+%   \begin{itemize}
+%   \item Beschreibt WW eines magnetischen Dipols mit einem Magnetfeld
+%   \item Betrag: "`Stärke der WW"'
+%   \item Richtung: Angestrebte Ausrichtung zum Magnetfeld
+%   \end{itemize}
+% \end{frame}
+
+\begin{frame}{\insertsection: angular momentum and spin}
+  Ursache des Magnetismus bei einem Permanentmagneten:
+  \begin{itemize}
+  \item Bahndrehimpuls
+  \item Spin
+  \end{itemize}
+  der Atome
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,28 +175,6 @@
   \item Dark Matter
   \item Unification of Forces
   \item Hierarchy Problem
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{What is a magnetic moment?}
-
-\begin{frame}{\insertsection}
-  Ursache des Magnetismus bei einem Permanentmagneten:
-  \begin{itemize}
-  \item Bahndrehimpuls
-  \item Spin
-  \end{itemize}
-  der Atome
-\end{frame}
-
-\begin{frame}{\insertsection}
-  Magnetisches Moment $\vec{m}$:
-  \begin{itemize}
-  \item Beschreibt WW eines magnetischen Dipols mit einem Magnetfeld
-  \item Betrag: "`Stärke der WW"'
-  \item Richtung: Angestrebte Ausrichtung zum Magnetfeld
   \end{itemize}
 \end{frame}
 
