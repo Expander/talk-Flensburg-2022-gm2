@@ -23,6 +23,26 @@
 \newcommand{\Exp}{\text{Exp}}
 \newcommand{\SM}{\text{SM}}
 
+% BNL-E821
+\newcommand{\amuBNL}{11659209.1} % 
+\newcommand{\numamuBNL}{\num{\amuBNL}}
+\newcommand{\DamuBNL}{6.3}
+
+% FNAL 2021
+\newcommand{\amuFNAL}{11659204.0}
+\newcommand{\DamuFNAL}{5.4}
+\newcommand{\numamuFNAL}{\num{\amuFNAL}}
+
+% experimental, combined
+\newcommand{\amuExp}{11659206.1}
+\newcommand{\numamuExp}{\num{\amuExp}}
+\newcommand{\DamuExp}{4.1} % uncertainty
+
+% SM
+\newcommand{\amuSM}{11659181.0}
+\newcommand{\numamuSM}{\num{\amuSM}}
+\newcommand{\DamuSM}{4.3}
+
 \definecolor{blue}{rgb}{0,0.7,1.0}
 \definecolor{green}{rgb}{0,1.0,0.5}
 
@@ -101,77 +121,99 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{History of the measurement}
-
-% BNL-E821
-\newcommand{\amuBNL}{11659209.1} % 
-\newcommand{\numamuBNL}{\num{\amuBNL}}
-% \newcommand{\amuBNLStat}{5.4}
-% \newcommand{\amuBNLSys}{3.3}
-\newcommand{\DamuBNL}{6.3}
-% \newcommand{\numamuBNLStat}{\num{\amuBNLStat}}
-% \newcommand{\numamuBNLSys}{\num{\amuBNLSys}}
-
-% FNAL 2021
-\newcommand{\amuFNAL}{11659204.0}
-\newcommand{\DamuFNAL}{5.4}
-\newcommand{\numamuFNAL}{\num{\amuFNAL}}
-
-% experimental, combined
-\newcommand{\amuExp}{11659206.1}
-\newcommand{\numamuExp}{\num{\amuExp}}
-\newcommand{\DamuExp}{4.1} % uncertainty
-
-% SM
-\newcommand{\amuSM}{11659181.0}
-\newcommand{\numamuSM}{\num{\amuSM}}
-\newcommand{\DamuSM}{4.3}
-
-\begin{frame}{\insertsection}
-  Exprimental measurements:
-  \begin{align*}
-    a^{\text{BNL-2016}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} \\
-    a^{\text{FNAL-2021}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} \\
-    \Rightarrow\qquad
-    a^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10} \\
-    \intertext{Standard Model prediction:}
-    a^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10}
-  \end{align*}
-\end{frame}
-
-\begin{frame}{\insertsection}
-  \begin{center}
-    \begin{tikzpicture}
-      \begin{axis}[
-        xlabel = {$(a - a^\SM)\times 10^{10}$},
-        ymajorticks = false,
-        xmin = -10, xmax = 40,
-        ymin = 0, ymax = 4,
-        ]
-        \addplot[blue,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
-          (\amuBNL  - \amuSM, 3) +- (\DamuBNL , 0)
-          (\amuFNAL - \amuSM, 2) +- (\DamuFNAL, 0)
-          (\amuExp  - \amuSM, 1) +- (\DamuExp , 0)
-        };
-        \draw[fill,green] (-\DamuSM, 0) rectangle (\DamuSM, 4);
-        \node[above] at (\amuBNL  - \amuSM, 3) {BNL};
-        \node[above] at (\amuFNAL - \amuSM, 2) {FNAL};
-        \node[above] at (\amuExp  - \amuSM, 1) {Experimental};
-        \node[black] at (0, 2) {SM};
-      \end{axis}
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{The Anomalous Magnetic Moment}
+\section{Anomalous magnetic moment}
 
 \begin{frame}{\insertsection}
   Relative deviation of $g$ from the value 2:
   \begin{align*}
     a := \frac{g-2}{2}
   \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Measurement}
+
+\begin{frame}{\insertsection}
+  Exprimental measurements:
+  \begin{align*}
+    a^{\text{BNL}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} && (2016)\\
+    a^{\text{FNAL}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} && (2021)
+    \intertext{Combined:}
+    a^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10}
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Prediction}
+
+\begin{frame}{\insertsection}
+  Standard Model prediction:
+  \begin{align*}
+    a^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10}
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Comparison of measurement and prediction}
+
+% \begin{frame}{\insertsection}
+%   \begin{align*}
+%     a^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10} \\
+%     a^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10} \\
+%     \Rightarrow\qquad
+%     a^{\Exp} - a^\SM &= (25.1 \pm 5.9)\times 10^{-10}
+%   \end{align*}
+% \end{frame}
+
+\begin{frame}{\insertsection}
+  \begin{columns}
+    \column{0.7\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=\textwidth,
+          height=0.8\textheight,
+          xlabel = {$(a - a^\SM)\times 10^{10}$},
+          ymajorticks = false,
+          xmin = -10, xmax = 40,
+          ymin = 0, ymax = 4,
+          ]
+          \addplot[blue,dashed,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
+            (\amuBNL  - \amuSM, 3) +- (\DamuBNL , 0)
+            (\amuFNAL - \amuSM, 2) +- (\DamuFNAL, 0)
+            % (\amuExp  - \amuSM, 1) +- (\DamuExp , 0)
+          };
+          \addplot[blue,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
+            (\amuExp  - \amuSM, 1) +- (\DamuExp , 0)
+          };
+          \draw[fill,green] (-\DamuSM, 0) rectangle (\DamuSM, 4);
+          \node[above] at (\amuBNL  - \amuSM, 3) {BNL};
+          \node[above] at (\amuFNAL - \amuSM, 2) {FNAL};
+          \node[above] at (\amuExp  - \amuSM, 1) {Measurement};
+          \node[black,rotate=90] at (0, 2) {SM prediction};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+
+    \column{0.29\textwidth}
+    $a^{\Exp} - a^\SM = (25.1 \pm 5.9)\times 10^{-10}$
+
+    \bigskip
+
+    Deviation $\approx 4.2\sigma$
+
+    \bigskip
+
+    % using SpecialFunctions
+    % DF(n) = erf(n/sqrt(2))
+    % (1 - DF(4.2))*100
+
+    $P(\text{data}|\SM)\approx \num{0.0027}\%$
+
+  \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
