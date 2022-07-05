@@ -20,6 +20,14 @@
 \usepackage{pgfplots}\pgfplotsset{compat=1.17}
 \usepackage{siunitx}
 
+\newcommand{\Exp}{\text{Exp}}
+\newcommand{\SM}{\text{SM}}
+
+\definecolor{blue}{rgb}{0,0.7,1.0}
+\definecolor{green}{rgb}{0,1.0,0.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \title{The magic is always in the details}
 \subtitle{The search for new physics with the muon}
 
@@ -125,9 +133,9 @@
     a^{\text{BNL-2016}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} \\
     a^{\text{FNAL-2021}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} \\
     \Rightarrow\qquad
-    a^{\text{Exp}} &= (\numamuExp \pm \DamuExp)\times 10^{-10} \\
+    a^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10} \\
     \intertext{Standard Model prediction:}
-    a^{\text{SM}} &= (\numamuSM \pm \DamuSM)\times 10^{-10}
+    a^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10}
   \end{align*}
 \end{frame}
 
@@ -135,11 +143,21 @@
   \begin{center}
     \begin{tikzpicture}
       \begin{axis}[
+        xlabel = {$(a - a^\SM)\times 10^{10}$},
+        ymajorticks = false,
+        xmin = -10, xmax = 40,
+        ymin = 0, ymax = 4,
         ]
         \addplot[blue,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
-          (\amuBNL , 2) +- (\DamuBNL , 0)
-          (\amuFNAL, 1) +- (\DamuFNAL, 0)
+          (\amuBNL  - \amuSM, 3) +- (\DamuBNL , 0)
+          (\amuFNAL - \amuSM, 2) +- (\DamuFNAL, 0)
+          (\amuExp  - \amuSM, 1) +- (\DamuExp , 0)
         };
+        \draw[fill,green] (-\DamuSM, 0) rectangle (\DamuSM, 4);
+        \node[above] at (\amuBNL  - \amuSM, 3) {BNL};
+        \node[above] at (\amuFNAL - \amuSM, 2) {FNAL};
+        \node[above] at (\amuExp  - \amuSM, 1) {Experimental};
+        \node[black] at (0, 2) {SM};
       \end{axis}
     \end{tikzpicture}
   \end{center}
