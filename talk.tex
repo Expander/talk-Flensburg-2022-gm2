@@ -97,10 +97,10 @@
 
 % BNL-E821
 \newcommand{\amuBNL}{11659209.1} % 
+\newcommand{\numamuBNL}{\num{\amuBNL}}
 % \newcommand{\amuBNLStat}{5.4}
 % \newcommand{\amuBNLSys}{3.3}
 \newcommand{\DamuBNL}{6.3}
-\newcommand{\numamuBNL}{\num{\amuBNL}}
 % \newcommand{\numamuBNLStat}{\num{\amuBNLStat}}
 % \newcommand{\numamuBNLSys}{\num{\amuBNLSys}}
 
@@ -109,11 +109,25 @@
 \newcommand{\DamuFNAL}{5.4}
 \newcommand{\numamuFNAL}{\num{\amuFNAL}}
 
+% experimental, combined
+\newcommand{\amuExp}{11659206.1}
+\newcommand{\numamuExp}{\num{\amuExp}}
+\newcommand{\DamuExp}{4.1} % uncertainty
+
+% SM
+\newcommand{\amuSM}{11659181.0}
+\newcommand{\numamuSM}{\num{\amuSM}}
+\newcommand{\DamuSM}{4.3}
+
 \begin{frame}{\insertsection}
   Exprimental measurements:
   \begin{align*}
     a^{\text{BNL-2016}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} \\
-    a^{\text{FNAL-2021}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10}
+    a^{\text{FNAL-2021}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} \\
+    \Rightarrow\qquad
+    a^{\text{Exp}} &= (\numamuExp \pm \DamuExp)\times 10^{-10} \\
+    \intertext{Standard Model prediction:}
+    a^{\text{SM}} &= (\numamuSM \pm \DamuSM)\times 10^{-10}
   \end{align*}
 \end{frame}
 
