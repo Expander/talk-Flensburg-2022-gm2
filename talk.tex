@@ -139,15 +139,106 @@
 %   \item Betrag: "`Stärke der WW"'
 %   \item Richtung: Angestrebte Ausrichtung zum Magnetfeld
 %   \end{itemize}
+%   Ursache des Magnetismus bei einem Permanentmagneten:
+%   \begin{itemize}
+%   \item Bahndrehimpuls
+%   \item Spin
+%   \end{itemize}
+%   der Atome
 % \end{frame}
 
-\begin{frame}{\insertsection: angular momentum and spin}
-  Ursache des Magnetismus bei einem Permanentmagneten:
-  \begin{itemize}
-  \item Bahndrehimpuls
-  \item Spin
-  \end{itemize}
-  der Atome
+\begin{frame}{\insertsection: origin}
+  \begin{center}
+    \begin{tikzpicture}
+      \def\lmag{1.8}  % length of magnet
+      \def\wmag{0.5}  % thickness of magnet
+      \coordinate (A) at (-\lmag/2,\wmag/2);
+      \coordinate (B) at (\lmag/2,-\wmag/2);
+      \draw[fill, color=green](A) rectangle ++(\lmag/2,-\wmag) node[black,midway]{S};
+      \draw[fill, color=red](0,-\wmag/2) rectangle ++(\lmag/2,\wmag) node[black,midway]{N};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{\insertsection: origin}
+  \begin{center}
+    \begin{tikzpicture}
+      \def\lmag{4}  % length of magnet
+      \def\wmag{1}  % thickness of magnet
+      \coordinate (A) at (-\lmag/2,\wmag/2);
+      \coordinate (B) at (\lmag/2,-\wmag/2);
+      \draw[fill, color=green](A) rectangle ++(\lmag/2,-\wmag) node[black,midway]{\large S};
+      \draw[fill, color=red](0,-\wmag/2) rectangle ++(\lmag/2,\wmag) node[black,midway]{\large N};
+      %
+      \foreach \X in {-1.9,-1.7,...,1.9} {%
+        \foreach \Y in {-0.4,-0.2,...,0.4} {%
+          \draw[fill,black] (\X,\Y) circle (0.01);
+        }
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{\insertsection: origin}
+  \begin{center}
+    \begin{tikzpicture}
+      \def\lmag{8}  % length of magnet
+      \def\wmag{2}  % thickness of magnet
+      \coordinate (A) at (-\lmag/2,\wmag/2);
+      \coordinate (B) at (\lmag/2,-\wmag/2);
+      \draw[fill, color=green](A) rectangle ++(\lmag/2,-\wmag) node[black,midway]{\Huge S};
+      \draw[fill, color=red](0,-\wmag/2) rectangle ++(\lmag/2,\wmag) node[black,midway]{\Huge N};
+      %
+      \foreach \X in {-3.8,-3.4,...,3.9} {%
+        \foreach \Y in {-0.8,-0.4,...,0.9} {%
+          \draw[fill,black] (\X,\Y) circle (0.02);
+        }
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{\insertsection: origin}
+  \begin{center}
+    \begin{tikzpicture}
+      \def\lmag{8}  % length of magnet
+      \def\wmag{2}  % thickness of magnet
+      \coordinate (A) at (-\lmag/2,\wmag/2);
+      \coordinate (B) at (\lmag/2,-\wmag/2);
+      \draw[fill, color=green](A) rectangle ++(\lmag/2,-\wmag) node[black,midway]{\Huge S};
+      \draw[fill, color=red](0,-\wmag/2) rectangle ++(\lmag/2,\wmag) node[black,midway]{\Huge N};
+      %
+      \foreach \X in {-3.8,-3.4,...,3.9} {%
+        \foreach \Y in {-0.8,-0.4,...,0.9} {%
+          % \draw[fill,black] (\X,\Y) circle (0.02);
+          \draw[black,->] (\X-0.1,\Y) -- ++(0.2,0);
+        }
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{\insertsection: origin}
+  \begin{center}
+    \begin{tikzpicture}
+      \fill[even odd rule,inner color=blue,outer color=solarizedRebase03!100] (0,0) circle (3);
+      \coordinate (n) at (0,0);
+      \coordinate (e) at (2,0.5);
+      \draw[fill,red] (n) circle (0.1);
+      \draw[fill,green] (e) circle (0.05);
+      \only<1>{%
+        \node[below,black] at (n) {nucleus};
+        \node[below,green] at (e) {electron};
+      }%
+      \only<2>{%
+        \draw[very thick,red,->] ($(n)+(0,-1)$) -- ++(0,2);
+        \draw[very thick,green,->] ($(e)+(0,-0.5)$) -- ++(0,1);
+      }%
+      \only<1-2>{%
+        \draw[ultra thick,blue,->] (5,-1.5) -- node[right] {$\vec{m}$} ++(0,3);
+      }%
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
