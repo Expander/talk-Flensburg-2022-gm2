@@ -23,7 +23,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usetikzlibrary{calc,decorations.markings}
+\usetikzlibrary{calc,decorations.markings,positioning,shapes}
 
 % default arrow style
 \tikzset{>=latex}
@@ -54,6 +54,23 @@
     \end{scope}
     \draw[blue,->,line width=3] (-\nc/8,2) -- ++(\nc/4,0) node[midway,above] {$\vec{m}$};
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tikzstyle{block} = [rectangle, draw, text width=7em, text centered, minimum height=2em]
+
+\tikzstyle{quark}     = [rectangle, black, draw, fill=yellow, minimum width=2em, text centered, minimum height=2em]
+\tikzstyle{lepton}    = [rectangle, black, draw, fill=red!50, minimum width=2em, text centered, minimum height=2em]
+\tikzstyle{gauge}     = [circle   , black, draw, fill=green , minimum size=2em, inner sep=0pt, text centered]
+\tikzstyle{scalar}    = [diamond  , black, draw, fill=blue!40, minimum width=2.3em, text centered, minimum height=2.3em, inner sep=0pt]
+\tikzstyle{goldstone} = [diamond  , black, draw, dashed, fill=blue!30, minimum width=2.3em, text centered, minimum height=2.3em, inner sep=0pt]
+\tikzstyle{squark}    = [diamond  , black, draw, fill=yellow, minimum width=2.3em, text centered, minimum height=2.3em, inner sep=0pt]
+\tikzstyle{slepton}   = [diamond  , black, draw, fill=red!50, minimum width=2.3em, text centered, minimum height=2.3em, inner sep=0pt]
+\tikzstyle{gaugino}   = [rectangle, black, draw, fill=green , minimum size=2em, inner sep=0pt, text centered]
+\tikzstyle{higgsino}  = [rectangle, black, draw, fill=blue!40  , minimum width=2em, text centered, minimum height=2em]
+\tikzstyle{inert}     = [diamond  , black, draw, fill=teal!80, minimum width=2.3em, text centered, minimum height=2.3em, inner sep=0pt]
+\tikzstyle{inertino}  = [rectangle, black, draw, fill=teal!80, minimum width=2em, text centered, minimum height=2em]
+\tikzstyle{phantom}   = [rectangle, black, minimum width=2em, text centered, minimum height=2em]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -288,10 +305,34 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{What the world is made of}
+\section{The Standard Model of Particle Physics}
 
 \begin{frame}{\insertsection}
-  The Standard Model of Particle Physics:
+  \begin{center}
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \node[quark] (u) {$u$};
+      \node[quark, below of=u] (d) {$d$};
+      \node[quark, right of=u] (c) {$c$};
+      \node[quark, below of=c] (s) {$s$};
+      \node[quark, right of=c] (t) {$t$};
+      \node[quark, below of=t] (b) {$b$};
+      \node[lepton, below of=d] (ne) {$\nu_e$};
+      \node[lepton, below of=ne] (e) {$e$};
+      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+      \node[lepton, below of=nm] (m) {$\mu$};
+      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+      \node[lepton, below of=nt] (ta) {$\tau$};
+      \node[gauge, right of=t] (gamma) {$\gamma$};
+      \node[gauge, below of=gamma] (g) {$g$};
+      \node[gauge, below of=g] (Z) {$Z$};
+      \node[gauge, below of=Z] (W) {$W$};
+      \node[scalar, right of=W] (H) {$h$};
+      \node[rotate=90] (quarks)  at ($(u)!0.5!(d)+(-1,0)$)  {quarks};
+      \node[rotate=90] (leptons) at ($(ne)!0.5!(e)+(-1,0)$) {leptons};
+      \node[below of=H] (higgs) {Higgs};
+      \node[above of=gamma, align=center] (gauge) {gauge\\[-0.5em] bosons};
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
