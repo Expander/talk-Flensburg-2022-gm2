@@ -80,6 +80,7 @@
 \newcommand{\numamuSM}{\num{\amuSM}}
 \newcommand{\DamuSM}{4.3}
 
+\definecolor{red}{rgb}{1.0,0.2,0.2}
 \definecolor{blue}{rgb}{0,0.7,1.0}
 \definecolor{green}{rgb}{0,1.0,0.5}
 
@@ -262,17 +263,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Electron $g$-factor}
+  Magnetic moment of the electron:
   \begin{align*}
-    \vec{m} &= g \frac{e}{2m}\vec{S}
+    \vec{m}_e &= g_e \frac{e}{2m_e}\vec{S}
   \end{align*}
+  Comparison measurement vs.\ prediction for $g_e$:
   \begin{align*}
-    a = \frac{g-2}{2}
+    g_e^\Exp &= \num{2.00231930436146}(58) \\
+    g_e^\SM  &= \num{2.00231930436328}(156)
   \end{align*}
-  \begin{align*}
-    a_e^\Exp &= \num{0.00115965218073}(28) \\
-    a_e^\SM &= \num{0.001159652181643}(764)
-  \end{align*}
+  Agreement within a relative uncertainty of \textcolor{red}{\underline{$\num{3e-13}$}}
 \end{frame}
+
+% \begin{frame}{Electron $g$-factor}
+%   Anomalous magnetic moment (relative deviation to $2$):
+%   \begin{align*}
+%     a_e = \frac{g_e-2}{2}
+%   \end{align*}
+%   \begin{align*}
+%     a_e^\Exp &= \num{0.00115965218073}(28) \\
+%     a_e^\SM  &= \num{0.00115965218164}(77)
+%   \end{align*}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
