@@ -30,6 +30,19 @@
 % default arrow style
 \tikzset{>=latex}
 
+\tikzset{%
+    ->-/.style={postaction={decorate},decoration={%
+            markings,mark=at position #1 with {\arrow{>}}%
+        }%
+    },%
+    ->-/.default=.5,%
+    -<-/.style={postaction={decorate},decoration={%
+            markings,mark=at position #1 with {\arrowreversed{>}}%
+        }%
+    },%
+    -<-/.default=.5%
+}
+
 % arrows on the field lines
 \tikzstyle directed=[postaction={decorate,decoration={markings,
   mark=at position .2 with {\arrowreversed[scale=1.5]{>}},
@@ -55,6 +68,19 @@
       \draw[fLines] (\lmag/2,0) ++(6,0)--(\lmag/2,0);
     \end{scope}
     \draw[blue,->,line width=3] (-\nc/8,2) -- ++(\nc/4,0) node[midway,above] {$\vec{m}$};
+}
+
+% Quantum correction, #1 = coordinate for origin, #2 = angle
+\newcommand{\QC}[2]{%
+  \begin{scope}[shift={#1},rotate around={#2:(0,0)}]
+    % \draw[blue,fill] (0,0) circle (0.05);
+    % \draw[blue,fill] (1,0) circle (0.05);
+    \pgfmathsetmacro{\angl}{45}
+    \draw[->-=0.7,blue] (0,0) to[out={-\angl},in={180+\angl}] node[pos=0.3,green] (a) {} (1,0);
+    \draw[->-=0.7,blue] (0,0) to[out={\angl}, in={90+\angl}]  node[pos=0.3,green] (b) {} (1,0);
+    \draw[green,fill] (a) circle (0.05);
+    \draw[green] (b) circle (0.05);
+  \end{scope}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -425,18 +451,46 @@
 }
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[fill,green] (0,0) circle (0.1) node[below] {$e$};
+      \QC{(1,1)}{rand*180};
+      \QC{(2,1)}{rand*180};
+      \QC{(1,2)}{rand*180};
+      \QC{(1,-1)}{rand*180};
+      \QC{(3,-1)}{rand*180};
+      \QC{(1,-2)}{rand*180};
+      \QC{(-1.5,2)}{rand*180};
+      \QC{(-1.5,1)}{rand*180};
+      \QC{(-2.5,2)}{rand*180};
+      \QC{(-1,-1)}{rand*180};
+      \QC{(-3,-1)}{rand*180};
+      \QC{(-1,-2)}{rand*180};
+      \QC{(0,-3)}{rand*180};
+      \QC{(3,0)}{rand*180};
+      \QC{(-3,0)}{rand*180};
+      \QC{(4,-3)}{rand*180};
+      \QC{(-4,-3)}{rand*180};
+      % \foreach \N in {1,...,20} {%
+      %   \QC{(rand*4,rand*3)}{rand*180};
+      % }
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 \note{
   \begin{itemize}
   \item To correctly predict $g_e$ one has to take into account
     quantum corrections from virtual particles.
-  \item Idea: All the time virtual particles appear and dissappear
-  \item Every particle is surrounded by virtual particles
-  \item One does not directly interact with a particle; only through a
-    ``sea'' of virtual particles.
-  \item The existence of the virtual particles changes the effective
-    value of $g_e$.
+  \item Idea:
+    \begin{itemize}
+    \item All the time virtual particles appear and dissappear
+    \item Every particle is surrounded by virtual particles
+    \item One does not directly interact with the electron; only
+      through a ``sea'' of virtual particles.
+    \item The existence of the virtual particles changes the effective
+      value of $g_e$.
+  \end{itemize}
   \end{itemize}
 }
 
