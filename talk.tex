@@ -1,4 +1,4 @@
-\documentclass[12pt]{beamer}
+\documentclass[12pt,notes]{beamer}
 
 \usecolortheme[dark,accent=yellow]{solarized}
 \beamertemplatetransparentcovered
@@ -12,6 +12,7 @@
   \usebeamertemplate*{page number in head/foot}\kern1em\vskip2pt%
 }
 \setbeamerfont{page number in head/foot}{size=\small}
+\setbeamerfont{note page}{size=\scriptsize}
 
 \usepackage[german]{babel}
 \usepackage{times}
@@ -20,6 +21,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}\pgfplotsset{compat=1.17}
 \usepackage{siunitx}
+\usepackage{multimedia}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -131,14 +133,52 @@
 \begin{frame}{}
   \begin{center}
     \includegraphics[width=0.8\textwidth]{img/Gravitationell-lins-Hubble}
+
+    \hfill\footnotesize [Abell 1689, ESA/Hubble]
   \end{center}
 \end{frame}
+
+\note{
+  \begin{itemize}
+  \item Start with picture of the galaxy cluster ``Abell 1689'' from the Hubble telescope
+  \item look closely: you'll see a gravity lens effect
+  \item So, there must be some massive object(s) between the galaxy
+    cluster and us
+  \item If one counts the number of visible objects (stars), one finds
+    that (assuming ART is correct), the cumulative mass of the stars
+    is not enough to explain this gravity lens effect.
+  \item So, there must be some invisible massive matter between the
+    galaxy cluster and us. This is what astronomers and cosmologists
+    call ``Dark Matter''.
+  \end{itemize}
+}
 
 \begin{frame}{}
   \begin{center}
     \includegraphics[width=0.8\textwidth]{img/Galaxy-M101}
 
     \hfill\footnotesize [ESA/Hubble]
+  \end{center}
+\end{frame}
+
+\note{
+  \begin{itemize}
+  \item Look at the photo from the Hubble telescope, it shows a spiral
+    galaxy, which is rotating.
+  \item If one counts the number of (visible) stars, one can estimate
+    the mass distribution of the galaxy.
+  \item From the mass distribution, one can predict (using ART) the
+    speed at which the outer stars move around the center.
+  \item However, one finds that the speed tends to be significantly
+    larger than expected.
+  \item This effect could be explained if there would be some
+    invisible (Dark Matter) that fills the galaxy.
+  \end{itemize}
+}
+
+\begin{frame}{}
+  \begin{center}
+    \movie[width=\textwidth,autostart,loop]{\includegraphics[width=\textwidth]{videos/dark_matter_affecting_galaxy_rotation.png}}{videos/dark_matter_affecting_galaxy_rotation.webm}
   \end{center}
 \end{frame}
 
