@@ -533,21 +533,46 @@
   \item If we know all particles, we can calculate the quantum
     corrections.
   \item To predict $g_e$: Use all known particles from the SM
+  \item Then calculate how the electron interacts with a magnetic
+    field.
+  \item The magnetic field is mediated by a photon
+  \item So, calculate the interaction strength of an electron with a photon
   \end{itemize}
 }
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
   Interaction of an electron with a magnetic field (mediated by a
   photon):
-  \begin{center}
+  \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
       \coordinate (a) at (0,0);
-      \draw[photon] (0,1) node[above] {$\gamma$} -- (a);
-      \draw[->-] (-1,-1) node[below left] {$e$} -- (a);
-      \draw[->-] (a) -- (1,-1) node[below right] {$e$};
+      \draw[photon] (0,1) node[left] {$\gamma$} -- (a);
+      \draw[->-] (-1,-1) node[left] {$e$} -- (a);
+      \draw[->-] (a) -- (1,-1) node[right] {$e$};
       \draw[fill] (a) circle (0.05); 
     \end{tikzpicture}
-  \end{center}
+    && g_e &= 2
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Electron $g$-factor: Quantum Corrections}
+  \begin{align*}
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at (-1,0);
+      \coordinate (i2) at (1,0);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] (-2,0) -- (i1);
+      \draw[] (i1) -- (a);
+      \draw[] (a) -- (i2);
+      \draw[->-] (i2) -- (2,0);
+      \draw[photon] (i1) to[bend right=60] (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+    && a_e &= \frac{\alpha}{2\pi} \approx \num{0.0011614}
+  \end{align*}
 \end{frame}
 
 \note{
