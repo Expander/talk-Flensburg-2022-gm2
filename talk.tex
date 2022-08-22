@@ -540,11 +540,12 @@
   Interaction of an electron with a magnetic field (mediated by a
   photon):
   \begin{center}
-    \begin{tikzpicture}[thick]
-      \draw[photon] (0,1) node[above] {$\gamma$} -- (0,0);
-      \draw[->-] (-1,-1) node[below left] {$e$} -- (0,0);
-      \draw[->-] (0,0) -- (1,-1) node[below right] {$e$};
-      \draw[fill] (0,0) circle (0.05); 
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \coordinate (a) at (0,0);
+      \draw[photon] (0,1) node[above] {$\gamma$} -- (a);
+      \draw[->-] (-1,-1) node[below left] {$e$} -- (a);
+      \draw[->-] (a) -- (1,-1) node[below right] {$e$};
+      \draw[fill] (a) circle (0.05); 
     \end{tikzpicture}
   \end{center}
 \end{frame}
