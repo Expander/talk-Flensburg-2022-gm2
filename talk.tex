@@ -25,10 +25,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usetikzlibrary{calc,decorations.markings,positioning,shapes}
+\usetikzlibrary{calc,decorations.markings,decorations.pathmorphing,positioning,shapes}
 
 % default arrow style
 \tikzset{>=latex}
+
+\tikzset{photon/.style={decorate, decoration=snake}}
 
 \tikzset{%
     ->-/.style={postaction={decorate},decoration={%
@@ -535,9 +537,14 @@
 }
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
+  Interaction of an electron with a magnetic field (mediated by a
+  photon):
   \begin{center}
-    \begin{tikzpicture}
-      \node { Feyman diagrams with SM particles here };
+    \begin{tikzpicture}[thick]
+      \draw[photon] (0,1) node[above] {$\gamma$} -- (0,0);
+      \draw[->-] (-1,-1) node[below left] {$e$} -- (0,0);
+      \draw[->-] (0,0) -- (1,-1) node[below right] {$e$};
+      \draw[fill] (0,0) circle (0.05); 
     \end{tikzpicture}
   \end{center}
 \end{frame}
