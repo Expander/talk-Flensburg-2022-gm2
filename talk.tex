@@ -556,6 +556,12 @@
 \end{frame}
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
+  Quantum corrections lead to deviations from the value $g_e=2$.
+  Relative deviation of $g_e$ from the value 2:
+  \begin{align*}
+    a_e := \frac{g_e-2}{2}
+  \end{align*}
+
   Feynman diagram with 1 loop:
   \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
@@ -572,7 +578,7 @@
       \draw[fill] (i1) circle (0.05); 
       \draw[fill] (i2) circle (0.05); 
     \end{tikzpicture}
-    && \Delta g_e^{\text{1-loop}} &\approx \num{0.00232282}
+    && a_e^{\text{1-loop}} &\approx \num{0.00116141}
     % alpha = 1/137.035999206
     % g[a_] := 2 a + 2
     % g[0 + h alpha/(2 Pi) + h^2 (alpha/Pi)^2 (197/144 + Pi^2/12 + 3/4 Zeta[3] - Pi^2/2 Log[2])] // N[#,17]& // Expand
@@ -689,7 +695,7 @@
     \end{tikzpicture}
   \end{tabular}
   \begin{align*}
-    \Delta g_e^{\text{2-loop}} &\approx \num{-3.54461e-6}
+    a_e^{\text{2-loop}} &\approx \num{-1.77231e-6}
   \end{align*}
 \end{frame}
 
@@ -701,12 +707,12 @@
 }
 
 \begin{frame}{Electron $g$-factor}
-  Comparison measurement vs.\ multi-loop prediction for $g_e$:
+  Comparison measurement vs.\ multi-loop prediction for $a_e$:
   \begin{align*}
-    g_e^\Exp &= \num{2.00231930436146}(58) \\
-    g_e^\SM  &= \num{2.00231930436328}(156)
+    a_e^\Exp &= (\num{11596521807.3}\pm \num{2.8})\times 10^{-13} \\
+    a_e^\SM  &= (\num{11596521816.4}\pm \num{7.7})\times 10^{-13}
   \end{align*}
-  Agreement within a relative uncertainty of \textcolor{red}{\underline{$\num{3e-13}$}}
+  Agreement within a relative uncertainty of \textcolor{red}{$\approx\num{e-10}$}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -714,10 +720,6 @@
 \section{Muon $g$-factor}
 
 \begin{frame}{\insertsection}
-  Relative deviation of $g$ from the value 2:
-  \begin{align*}
-    a_\mu := \frac{g_\mu-2}{2}
-  \end{align*}
   Standard Model multi-loop prediction:
   \begin{align*}
     a_\mu^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10} \\
