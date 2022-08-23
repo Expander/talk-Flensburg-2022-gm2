@@ -546,9 +546,9 @@
   \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
       \coordinate (a) at (0,0);
-      \draw[photon] (0,1) node[left] {$\gamma$} -- (a);
-      \draw[->-] (-1,-1) node[left] {$e$} -- (a);
-      \draw[->-] (a) -- (1,-1) node[right] {$e$};
+      \draw[photon] (0,1) node[above] {$\gamma$} -- (a);
+      \draw[->-] (-1,-1) node[below left] {$e$} -- (a);
+      \draw[->-] (a) -- (1,-1) node[below right] {$e$};
       \draw[fill] (a) circle (0.05); 
     \end{tikzpicture}
     && g_e &= 2
