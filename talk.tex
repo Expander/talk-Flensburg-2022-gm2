@@ -121,11 +121,17 @@
 \newcommand{\amuExp}{11659206.1}
 \newcommand{\numamuExp}{\num{\amuExp}}
 \newcommand{\DamuExp}{4.1} % uncertainty
+\newcommand{\aeExp}{11596521807.3}
+\newcommand{\numaeExp}{\num{\aeExp}}
+\newcommand{\DaeExp}{2.8}
 
 % SM
 \newcommand{\amuSM}{11659181.0}
 \newcommand{\numamuSM}{\num{\amuSM}}
 \newcommand{\DamuSM}{4.3}
+\newcommand{\aeSM}{11596521816.4}
+\newcommand{\numaeSM}{\num{\aeSM}}
+\newcommand{\DaeSM}{7.7}
 
 \definecolor{red}{rgb}{1.0,0.2,0.2}
 \definecolor{blue}{rgb}{0,0.7,1.0}
@@ -706,13 +712,48 @@
   \end{itemize}
 }
 
-\begin{frame}{Electron $g$-factor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Electron $g$-factor}
+
+\begin{frame}{\insertsection}
   Comparison measurement vs.\ multi-loop prediction for $a_e$:
   \begin{align*}
-    a_e^\Exp &= (\num{11596521807.3}\pm \num{2.8})\times 10^{-13} \\
-    a_e^\SM  &= (\num{11596521816.4}\pm \num{7.7})\times 10^{-13}
+    a_e^\Exp &= (\numaeExp\pm \num{\DaeExp})\times 10^{-13} \\
+    a_e^\SM  &= (\numaeSM \pm \num{\DaeSM})\times 10^{-13}
   \end{align*}
   Agreement within a relative uncertainty of \textcolor{red}{$\approx\num{e-10}$}
+\end{frame}
+
+\begin{frame}{\insertsection}
+  \begin{columns}
+    \column{0.7\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=\textwidth,
+          height=0.8\textheight,
+          xlabel = {$(a_e - a_e^\SM)\times 10^{13}$},
+          ymajorticks = false,
+          xmin = -20, xmax = 20,
+          ymin = 0, ymax = 4,
+          ]
+          \draw[fill,green] (-\DaeSM, 0) rectangle (\DaeSM, 4);
+          \addplot[blue,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
+            % (\aeExp  - \aeSM, 0.5) +- (\DaeExp , 0)
+            (-9.1, 0.5) +- (\DaeExp , 0)
+          };
+          \node[above,blue] at (-9.1, 0.5) {Experiment};
+          \node[black,rotate=90] at (0, 2) {SM prediction};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+
+    \column{0.29\textwidth}
+    % $a_e^{\Exp} - a_e^\SM = (-9.1 \pm 8.2)\times 10^{-13}$
+    $a_e^{\Exp} - a_e^\SM = (-9 \pm 9)\times 10^{-13}$
+
+  \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
