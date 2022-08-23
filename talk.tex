@@ -711,24 +711,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Open questions}
-
-\begin{frame}{\insertsection}
-  \begin{itemize}
-  \item Dark Matter
-  \item Unification of Forces
-  \item Hierarchy Problem
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Anomalous magnetic moment}
+\section{Muon $g$-factor}
 
 \begin{frame}{\insertsection}
   Relative deviation of $g$ from the value 2:
   \begin{align*}
-    a := \frac{g-2}{2}
+    a_\mu := \frac{g_\mu-2}{2}
+  \end{align*}
+  Standard Model multi-loop prediction:
+  \begin{align*}
+    a_\mu^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10} \\
+    a_\mu^\Exp &= ~ ?
   \end{align*}
 \end{frame}
 
@@ -771,21 +764,10 @@
 \begin{frame}{\insertsection}
   Exprimental measurements:
   \begin{align*}
-    a^{\text{BNL}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} && (2016)\\
-    a^{\text{FNAL}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} && (2021)
+    a_\mu^{\text{BNL}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} && (2016)\\
+    a_\mu^{\text{FNAL}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} && (2021)
     \intertext{Combined:}
-    a^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10}
-  \end{align*}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Prediction}
-
-\begin{frame}{\insertsection}
-  Standard Model prediction:
-  \begin{align*}
-    a^\SM &= (\numamuSM \pm \DamuSM)\times 10^{-10}
+    a_\mu^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10}
   \end{align*}
 \end{frame}
 
@@ -810,7 +792,7 @@
         \begin{axis}[
           width=\textwidth,
           height=0.8\textheight,
-          xlabel = {$(a - a^\SM)\times 10^{10}$},
+          xlabel = {$(a_\mu - a_\mu^\SM)\times 10^{10}$},
           ymajorticks = false,
           xmin = -10, xmax = 40,
           ymin = 0, ymax = 4,
@@ -833,7 +815,7 @@
     \end{center}
 
     \column{0.29\textwidth}
-    $a^{\Exp} - a^\SM = (25.1 \pm 5.9)\times 10^{-10}$
+    $a_\mu^{\Exp} - a_\mu^\SM = (25.1 \pm 5.9)\times 10^{-10}$
 
     \bigskip
 
@@ -861,6 +843,18 @@
   \item zusätzliche Higgs-Teilchen?
   \item zusätzliche Quarks oder Leptonen?
   \item Supersymmetrie?
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Open questions}
+
+\begin{frame}{\insertsection}
+  \begin{itemize}
+  \item Dark Matter
+  \item Unification of Forces
+  \item Hierarchy Problem
   \end{itemize}
 \end{frame}
 
