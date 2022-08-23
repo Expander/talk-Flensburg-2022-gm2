@@ -556,7 +556,7 @@
 \end{frame}
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
-  Feynman diagrams with 1 loop:
+  Feynman diagram with 1 loop:
   \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
       \coordinate (a) at (0,0);
@@ -582,22 +582,112 @@
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
   Feynman diagrams with 2 loops:
-  \begin{align*}
-    \begin{tikzpicture}[thick,baseline={(0,0)}]
+
+  \bigskip
+  \begin{tabular}{ccc}
+    \begin{tikzpicture}[thick,baseline={(0,0)},scale=0.5]
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at (-2,0);
+      \coordinate (i2) at (2,0);
+      \coordinate (i3) at (-1,0);
+      \coordinate (i4) at (1,0);
+      \draw[photon] (0,2) -- (a);
+      \draw[] (-3,0) -- (3,0);
+      \draw[photon] (i1) to[bend right=60] (i2);
+      \draw[photon] (i3) to[bend right=60] (i4);
+      \draw[fill] (a) circle (0.05);
+      \draw[fill] (i1) circle (0.05);
+      \draw[fill] (i2) circle (0.05);
+      \draw[fill] (i3) circle (0.05);
+      \draw[fill] (i4) circle (0.05);
+    \end{tikzpicture}
+    &
+    \begin{tikzpicture}[thick,baseline={(0,0)},scale=0.5]
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at (-2,0);
+      \coordinate (i2) at (1,0);
+      \coordinate (i3) at (-3,0);
+      \coordinate (i4) at (-1,0);
+      \draw[photon] (0,2) -- (a);
+      \draw[] (-4,0) -- (2,0);
+      \draw[photon] (i1) to[bend right=60] (i2);
+      \draw[photon] (i3) to[bend left=60] (i4);
+      \draw[fill] (a) circle (0.05);
+      \draw[fill] (i1) circle (0.05);
+      \draw[fill] (i2) circle (0.05);
+      \draw[fill] (i3) circle (0.05);
+      \draw[fill] (i4) circle (0.05);
+    \end{tikzpicture}
+    &
+    \begin{tikzpicture}[thick,baseline={(0,0)},scale=0.5]
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at (-3,0);
+      \coordinate (i2) at (1,0);
+      \coordinate (i3) at (-2,0);
+      \coordinate (i4) at (-1,0);
+      \draw[photon] (0,2) -- (a);
+      \draw[] (-4,0) -- (2,0);
+      \draw[photon] (i1) to[bend right=60] (i2);
+      \draw[photon] (i3) to[bend left=60] (i4);
+      \draw[fill] (a) circle (0.05);
+      \draw[fill] (i1) circle (0.05);
+      \draw[fill] (i2) circle (0.05);
+      \draw[fill] (i3) circle (0.05);
+      \draw[fill] (i4) circle (0.05);
+    \end{tikzpicture}
+    \\[1cm]
+    \begin{tikzpicture}[thick,baseline={(0,0)},scale=0.5]
       \coordinate (a) at (0,0);
       \coordinate (i1) at (-1,0);
       \coordinate (i2) at (1,0);
-      \draw[photon] (0,1) -- (a);
-      \draw[->-] (-2,0) -- (i1);
-      \draw[] (i1) -- (a);
-      \draw[] (a) -- (i2);
-      \draw[->-] (i2) -- (2,0);
+      \coordinate (i3) at (-3,0);
+      \coordinate (i4) at (-2,0);
+      \draw[photon] (0,2) -- (a);
+      \draw[] (-4,0) -- (2,0);
       \draw[photon] (i1) to[bend right=60] (i2);
-      \draw[fill] (a) circle (0.05); 
-      \draw[fill] (i1) circle (0.05); 
-      \draw[fill] (i2) circle (0.05); 
+      \draw[photon] (i3) to[bend left=60] (i4);
+      \draw[fill] (a) circle (0.05);
+      \draw[fill] (i1) circle (0.05);
+      \draw[fill] (i2) circle (0.05);
+      \draw[fill] (i3) circle (0.05);
+      \draw[fill] (i4) circle (0.05);
     \end{tikzpicture}
-  \end{align*}
+    &
+    \begin{tikzpicture}[thick,baseline={(0,0)},scale=0.5]
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at (-2,0);
+      \coordinate (i2) at (1,0);
+      \coordinate (i3) at (-1,0);
+      \coordinate (i4) at (2,0);
+      \draw[photon] (0,2) -- (a);
+      \draw[] (-3,0) -- (3,0);
+      \draw[photon] (i1) to[bend right=60] (i2);
+      \draw[photon] (i3) to[bend right=60] (i4);
+      \draw[fill] (a) circle (0.05);
+      \draw[fill] (i1) circle (0.05);
+      \draw[fill] (i2) circle (0.05);
+      \draw[fill] (i3) circle (0.05);
+      \draw[fill] (i4) circle (0.05);
+    \end{tikzpicture}
+    &
+    \begin{tikzpicture}[thick,baseline={(0,0)},scale=0.5]
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at (-2,0);
+      \coordinate (i2) at (2,0);
+      \coordinate (i3) at (0,1);
+      \coordinate (i4) at (0,2);
+      \draw[photon] (0,3) -- (i4) (i3) -- (a);
+      \draw[] (-3,0) -- (3,0);
+      \draw[] (i3) to[bend right=90] (i4)
+              (i4) to[bend right=90] (i3);
+      \draw[photon] (i1) to[bend right=60] (i2);
+      \draw[fill] (a) circle (0.05);
+      \draw[fill] (i1) circle (0.05);
+      \draw[fill] (i2) circle (0.05);
+      \draw[fill] (i3) circle (0.05);
+      \draw[fill] (i4) circle (0.05);
+    \end{tikzpicture}
+  \end{tabular}
   \begin{align*}
     \Delta g_e^{\text{2-loop}} &\approx \num{-3.54461e-6}
   \end{align*}
