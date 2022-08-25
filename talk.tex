@@ -14,6 +14,7 @@
 \setbeamerfont{page number in head/foot}{size=\small}
 \setbeamerfont{note page}{size=\scriptsize}
 \addtobeamertemplate{note page}{\setbeamerfont{itemize/enumerate subbody}{size=\tiny}}{}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
 
 \usepackage[german]{babel}
 \usepackage{times}
@@ -952,6 +953,7 @@
   \begin{center}
     \includegraphics[width=0.6\textwidth]{img/mA-tb-X}
   \end{center}
+  \hfill\cite{Athron:2021evk}
 \end{frame}
 
 \note{
@@ -1045,6 +1047,13 @@
     observed yet. That is one reason the LHC was built.
   \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{References}
+  \bibliographystyle{abbrv}
+  \bibliography{talk}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
