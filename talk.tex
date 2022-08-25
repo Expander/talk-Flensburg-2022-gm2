@@ -930,6 +930,65 @@
 \end{frame}
 
 \begin{frame}{\insertsection}
+  Maybe there is a spin-partner for each particle?
+  \begin{center}
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \node[quark] (u) {$u$};
+      \node[quark, below of=u] (d) {$d$};
+      \node[quark, right of=u] (c) {$c$};
+      \node[quark, below of=c] (s) {$s$};
+      \node[quark, right of=c] (t) {$t$};
+      \node[quark, below of=t] (b) {$b$};
+      \node[lepton, below of=d] (ne) {$\nu_e$};
+      \node[lepton, below of=ne] (e) {$e$};
+      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+      \node[lepton, below of=nm] (m) {$\mu$};
+      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+      \node[lepton, below of=nt] (ta) {$\tau$};
+      \node[gauge, right of=t] (gamma) {$\gamma$};
+      \node[gauge, below of=gamma] (g) {$g$};
+      \node[gauge, below of=g] (Z) {$Z$};
+      \node[gauge, below of=Z] (W) {$W$};
+      \node[scalar, below of=e] (h) {$h$};
+      \node[scalar, right of=h] (H) {$H$};
+      \node[scalar, below of=h] (A) {$A$};
+      \node[scalar, right of=A] (Hpm) {$H^\pm$};
+      \node[rotate=90] (quarks)  at ($(u)!0.5!(d)+(-1,0)$)  {quarks};
+      \node[rotate=90] (leptons) at ($(ne)!0.5!(e)+(-1,0)$) {leptons};
+      \node[below=of A.west, anchor=west] (higgs) {Higgses};
+      % \node[above of=gamma, align=center] (gauge) {Eich-\\ bosonen};
+    \end{tikzpicture}
+    \hfill
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \node[squark] (u) {$\tilde u$};
+      \node[squark, below of=u] (d) {$\tilde d$};
+      \node[squark, right of=u] (c) {$\tilde c$};
+      \node[squark, below of=c] (s) {$\tilde s$};
+      \node[squark, right of=c] (t) {$\tilde t$};
+      \node[squark, below of=t] (b) {$\tilde b$};
+      \node[slepton, below of=d] (ne) {$\tilde \nu_e$};
+      \node[slepton, below of=ne] (e) {$\tilde e$};
+      \node[slepton, right of=ne] (nm) {$\tilde \nu_\mu$};
+      \node[slepton, below of=nm] (m) {$\tilde \mu$};
+      \node[slepton, right of=nm] (nt) {$\tilde \nu_\tau$};
+      \node[slepton, below of=nt] (ta) {$\tilde \tau$};
+      \node[gaugino, right of=t] (gamma) {$\tilde \gamma$};
+      \node[gaugino, below of=gamma] (g) {$\tilde g$};
+      \node[gaugino, below of=g] (Z) {$\tilde Z$};
+      \node[gaugino, below of=Z] (W) {$\tilde W$};
+      \node[higgsino, below of=e] (h) {$\tilde h_1^0$};
+      \node[higgsino, right of=h] (H) {$\tilde h_2^0$};
+      \node[higgsino, below of=h] (A) {$\tilde h^-_1$};
+      \node[higgsino, below of=H] (Hpm) {$\tilde h^+_2$};
+      \node[rotate=90] (quarks)  at ($(u)!0.5!(d)+(-1,0)$)  {squarks};
+      \node[rotate=90] (leptons) at ($(ne)!0.5!(e)+(-1,0)$) {sleptons};
+      \node[below=of A.west, anchor=west] (higgs) {higgsinos};
+      \node[above of=gamma, align=center] (gauge) {gauginos};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{\insertsection}
   Möglicher Grund für Abweichung: Es gibt noch weitere unentdeckte
   Elementarteilchen!
   \begin{itemize}
