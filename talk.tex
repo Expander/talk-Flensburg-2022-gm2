@@ -898,9 +898,38 @@
 \end{frame}
 
 \begin{frame}{\insertsection}
-  Possible origin of the deviation: There are more particles, which we
-  have not observed yet .
+  Maybe there are more Higgs bosons?
+  \begin{center}
+    \begin{tikzpicture}[node distance = 2.5em, auto]
+      \node[quark] (u) {$u$};
+      \node[quark, below of=u] (d) {$d$};
+      \node[quark, right of=u] (c) {$c$};
+      \node[quark, below of=c] (s) {$s$};
+      \node[quark, right of=c] (t) {$t$};
+      \node[quark, below of=t] (b) {$b$};
+      \node[lepton, below of=d] (ne) {$\nu_e$};
+      \node[lepton, below of=ne] (e) {$e$};
+      \node[lepton, right of=ne] (nm) {$\nu_\mu$};
+      \node[lepton, below of=nm] (m) {$\mu$};
+      \node[lepton, right of=nm] (nt) {$\nu_\tau$};
+      \node[lepton, below of=nt] (ta) {$\tau$};
+      \node[gauge, right of=t] (gamma) {$\gamma$};
+      \node[gauge, below of=gamma] (g) {$g$};
+      \node[gauge, below of=g] (Z) {$Z$};
+      \node[gauge, below of=Z] (W) {$W$};
+      \node[scalar, right of=W] (h) {$h$};
+      \node[scalar, above of=h] (H) {$H$};
+      \node[scalar, above of=H] (A) {$A$};
+      \node[scalar, above of=A] (Hp) {$H^\pm$};
+      \node[rotate=90] (quarks)  at ($(u)!0.5!(d)+(-1,0)$)  {quarks};
+      \node[rotate=90] (leptons) at ($(ne)!0.5!(e)+(-1,0)$) {leptons};
+      \node[below of=h] (higgs) {Higgses};
+      \node[above of=gamma, align=center] (gauge) {gauge\\[-0.5em] bosons};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
 
+\begin{frame}{\insertsection}
   Möglicher Grund für Abweichung: Es gibt noch weitere unentdeckte
   Elementarteilchen!
   \begin{itemize}
