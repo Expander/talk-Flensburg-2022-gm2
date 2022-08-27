@@ -1113,7 +1113,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{\insertsection}
+\subsection{Minimal Supersymmetry}
+
+\begin{frame}{\insertsubsection}
   Maybe there is a spin-partner for each particle?
   \begin{center}
     \begin{tikzpicture}[node distance = 2.5em, auto]
@@ -1198,9 +1200,68 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{\insertsection}
-  Feynman diagrams
+\begin{frame}{\insertsubsection}
+  New quantum corrections in the Minimal Supersymmetric Standard Model
+  (MSSM) with 1 loop:
+  \begin{align*}
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \pgfmathsetmacro{\angl}{60};
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at ({180+\angl}:1);
+      \coordinate (i2) at (-\angl:1);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] ({180+\angl}:2) node[below left] {$\mu$} -- (i1);
+      \draw[->-] (i1) -- node[above left] {$\tilde{h}_{1,2}^\pm, \tilde{W}^\pm$} (a);
+      \draw[->-] (a) -- (i2);
+      \draw[->-] (i2) -- (-\angl:2) node[below right] {$\mu$};
+      \draw[dashed] (i1) -- node[below] {$\tilde{\nu}$} (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+    +
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \pgfmathsetmacro{\angl}{60};
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at ({180+\angl}:1);
+      \coordinate (i2) at (-\angl:1);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] ({180+\angl}:2) node[below left] {$\mu$} -- (i1);
+      \draw[->-,dashed] (i1) -- node[above left] {$\tilde{\mu}$} (a);
+      \draw[->-,dashed] (a) -- (i2);
+      \draw[->-] (i2) -- (-\angl:2) node[below right] {$\mu$};
+      \draw[] (i1) -- node[below] {$\tilde{h}_{1,2}^0$} (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+    +
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \pgfmathsetmacro{\angl}{60};
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at ({180+\angl}:1);
+      \coordinate (i2) at (-\angl:1);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] ({180+\angl}:2) node[below left] {$\mu$} -- (i1);
+      \draw[->-,dashed] (i1) -- node[above left] {$\tilde{\mu}$} (a);
+      \draw[->-,dashed] (a) -- (i2);
+      \draw[->-] (i2) -- (-\angl:2) node[below right] {$\mu$};
+      \draw[] (i1) -- node[below] {$\tilde{\gamma}, \tilde{Z}$} (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+  \end{align*}
 \end{frame}
+
+\note{
+  \begin{itemize}
+  \item The additional spin-partners contribute to the quantum
+    corrections to the magnetic moment.
+  \item Their contribution can explain the observed deviation of
+    $a_\mu$.
+  \end{itemize}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
