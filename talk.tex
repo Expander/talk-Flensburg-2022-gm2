@@ -1028,11 +1028,75 @@
   \end{itemize}
 }
 
-\begin{frame}{\insertsection}
-  Feynman diagrams
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Two-Higgs Doublet Model}
+
+\begin{frame}{\insertsubsection}
+  New quantum corrections in the 2HDM with 1 loop:
+  \begin{align*}
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \pgfmathsetmacro{\angl}{60};
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at ({180+\angl}:1);
+      \coordinate (i2) at (-\angl:1);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] ({180+\angl}:2) node[below left] {$\mu$} -- (i1);
+      \draw[dashed] (i1) -- node[above left] {$H^\pm$} (a);
+      \draw[dashed] (a) -- (i2);
+      \draw[->-] (i2) -- (-\angl:2) node[below right] {$\mu$};
+      \draw[->-] (i1) -- (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+    +
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \pgfmathsetmacro{\angl}{60};
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at ({180+\angl}:1);
+      \coordinate (i2) at (-\angl:1);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] ({180+\angl}:2) node[below left] {$\mu$} -- (i1);
+      \draw[->-] (i1) -- (a);
+      \draw[->-] (a) -- (i2);
+      \draw[->-] (i2) -- (-\angl:2) node[below right] {$\mu$};
+      \draw[dashed] (i1) -- node[below] {$H$} (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+    +
+    \begin{tikzpicture}[thick,baseline={(0,0)}]
+      \pgfmathsetmacro{\angl}{60};
+      \coordinate (a) at (0,0);
+      \coordinate (i1) at ({180+\angl}:1);
+      \coordinate (i2) at (-\angl:1);
+      \draw[photon] (0,1) -- (a);
+      \draw[->-] ({180+\angl}:2) node[below left] {$\mu$} -- (i1);
+      \draw[->-] (i1) -- (a);
+      \draw[->-] (a) -- (i2);
+      \draw[->-] (i2) -- (-\angl:2) node[below right] {$\mu$};
+      \draw[dashed] (i1) -- node[below] {$A$} (i2);
+      \draw[fill] (a) circle (0.05); 
+      \draw[fill] (i1) circle (0.05); 
+      \draw[fill] (i2) circle (0.05); 
+    \end{tikzpicture}
+  \end{align*}
 \end{frame}
 
-\begin{frame}{\insertsection}
+\note{
+  \begin{itemize}
+  \item The additional Higgs bosons contribute to the quantum
+    corrections to the magnetic moment.
+  \item Their contribution (including 2-loop corrections) can explain
+    the observed deviation of $a_\mu$.
+  \end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\insertsubsection}
   \begin{center}
     \includegraphics[width=0.6\textwidth]{img/mA-tb-X}
     \cite{Athron:2021evk}
@@ -1046,6 +1110,8 @@
     of the free parameters of the model.
   \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{\insertsection}
   Maybe there is a spin-partner for each particle?
@@ -1129,6 +1195,8 @@
     observed yet. That is one reason the LHC was built.
   \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{\insertsection}
   Feynman diagrams
