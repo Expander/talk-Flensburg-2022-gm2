@@ -929,22 +929,62 @@
 \note{
   \begin{itemize}
   \item The polarized muons $\mu^+$ circle around the muon storage
-    ring and begin to decay.
-  \item Within the ring there is a magnetic field, which lets the
-    muon's spins rotate.
-  \item Depending on the spin direction, their decay products
-    (neutrinos and positrons $e^+$) have different energy.
-  \item Measuring the energy of the decay products allows the
-    experimentalists to derive the value of $a_\mu$.
+    ring
   \end{itemize}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{\insertsection: Fermilab (FNAL)}
-  [explain magnetic field in the ring and the decay of the muons into
-  pions, show wiggly plot]
+  \begin{center}
+    \colorbox{white}{\includegraphics[width=0.6\textwidth]{img/FNAL-magnet}}
+    \footnotesize \cite{Miller:2012opa}
+    \hfill
+    \begin{tikzpicture}[thick]
+      \pgfmathsetmacro{\leng}{1.5}
+      \draw[->,green] (-45:\leng) -- ({90+45}:\leng) node[above] {$\vec{m}_\mu$};
+      \draw[->,blue] (0,-\leng) -- (0,\leng) node[above] {$\vec{B}$};
+      \draw[green,fill] (0,0) circle (0.5);
+      \draw[->,dashed] (-45:\leng) arc [start angle=0, end angle=-260, x radius=1cm, y radius=0.2cm];
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
+
+\note{
+  \begin{itemize}
+  \item Within the ring there is a magnetic field, which lets the
+    muon's spins rotate (Lamor precession).
+  \end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\insertsection: Fermilab (FNAL)}
+  \begin{columns}
+    \column{0.4\textwidth}
+    Inside the ring the muons decay:
+    \begin{align*}
+      \mu^+ \to e^+ + \nu_e + \bar{\nu}_\mu
+    \end{align*}
+    \column{0.6\textwidth}
+    \centering
+    % left lower right upper
+    \colorbox{white}{\includegraphics[trim={130 180 110 360},clip,width=\textwidth]{img/wiggly}}
+
+    \cite{Muong-2:2015xgu}
+  \end{columns}
+\end{frame}
+
+\note{
+  \begin{itemize}
+  \item At some point the muons begin to decay, mainly into positrons
+    and neutrinos.
+  \item Depending on the spin direction, their decay products have
+    different energy.
+  \item Measuring the energy of the decay products allows the
+    experimentalists to derive the value of $a_\mu$.
+  \end{itemize}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
