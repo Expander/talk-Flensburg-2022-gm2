@@ -135,13 +135,38 @@
 \newcommand{\Exp}{\text{Exp}}
 \newcommand{\SM}{\text{SM}}
 
+% CERN 1979 \cite{CERN-Mainz-Daresbury:1978ccd}
+% aμ+ = 1165911(11) × 10−9
+% aμ− = 1165937(12) × 10−9
+%
+% Combine the two measurements:
+% https://stats.stackexchange.com/questions/193987/how-to-combine-two-measurements-of-the-same-quantity-with-different-confidences
+% a1 = 1165911e-9
+% d1 = 11e-9
+% a2 = 1165937e-9
+% d2 = 12e-9
+% combined = (a1/d1^2 + a2/d2^2) / (1/d1^2 + 1/d2^2)
+% dcombined = sqrt(1 / (1/d1^2 + 1/d2^2))
+
+\newcommand{\amuCERNMuP}{11659110} % e-10
+\newcommand{\numamuCERNMuP}{\num{\amuCERNMuP}}
+\newcommand{\DamuCERNMuP}{110}
+
+\newcommand{\amuCERNMuM}{11659370} % e-10
+\newcommand{\numamuCERNMuM}{\num{\amuCERNMuM}}
+\newcommand{\DamuCERNMuM}{120}
+
+\newcommand{\amuCERN}{11659229} % e-10
+\newcommand{\numamuCERN}{\num{\amuCERN}}
+\newcommand{\DamuCERN}{81} % e-10
+
 % BNL-E821
-\newcommand{\amuBNL}{11659209.1} % 
+\newcommand{\amuBNL}{11659209.1} % e-10
 \newcommand{\numamuBNL}{\num{\amuBNL}}
 \newcommand{\DamuBNL}{6.3}
 
 % FNAL 2021
-\newcommand{\amuFNAL}{11659204.0}
+\newcommand{\amuFNAL}{11659204.0} % e-10
 \newcommand{\DamuFNAL}{5.4}
 \newcommand{\numamuFNAL}{\num{\amuFNAL}}
 
@@ -891,6 +916,7 @@
 \begin{frame}{\insertsection}
   Experimental measurements:
   \begin{align*}
+    a_\mu^{\text{CERN}} &= (\numamuCERN \pm \DamuCERN)\times 10^{-10} && (1979)\\
     a_\mu^{\text{BNL}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} && (2016)\\
     a_\mu^{\text{FNAL}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} && (2021)
     \intertext{Combined:}
@@ -921,13 +947,54 @@
           height=0.8\textheight,
           xlabel = {$(a_\mu - a_\mu^\SM)\times 10^{10}$},
           ymajorticks = false,
+          xmin = -50, xmax = 150,
+          ymin = 0, ymax = 4,
+          ]
+          \addplot[blue,dashed,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
+            (\amuCERN - \amuSM, 3) +- (\DamuCERN, 0)
+            (\amuBNL  - \amuSM, 2) +- (\DamuBNL , 0)
+            (\amuFNAL - \amuSM, 1) +- (\DamuFNAL, 0)
+          };
+          \draw[fill,green] (-\DamuSM, 0) rectangle (\DamuSM, 5);
+          \node[above] at (\amuCERN - \amuSM, 3) {CERN};
+          \node[above] at (\amuBNL  - \amuSM, 2) {BNL};
+          \node[above] at (\amuFNAL - \amuSM, 1) {FNAL};
+          \node[above right,green,rotate=90] at (0, 0.5) {SM prediction};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+
+    \column{0.29\textwidth}
+  \end{columns}
+\end{frame}
+
+\note{
+  \begin{itemize}
+  \item The first measurement from CERN is compatible with the SM
+    prediction due to its large uncertainty.
+  \item The refined measurements from BNL and FNAL have significantly
+    smaller uncertainties.
+  \item Question: How large is the difference between the combined
+    measurement and the SM prediction?
+  \end{itemize}
+}
+
+\begin{frame}{\insertsection}
+  \begin{columns}
+    \column{0.7\textwidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+          width=\textwidth,
+          height=0.8\textheight,
+          xlabel = {$(a_\mu - a_\mu^\SM)\times 10^{10}$},
+          ymajorticks = false,
           xmin = -10, xmax = 40,
           ymin = 0, ymax = 4,
           ]
           \addplot[blue,dashed,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
             (\amuBNL  - \amuSM, 3) +- (\DamuBNL , 0)
             (\amuFNAL - \amuSM, 2) +- (\DamuFNAL, 0)
-            % (\amuExp  - \amuSM, 1) +- (\DamuExp , 0)
           };
           \addplot[blue,only marks,mark=*,error bars/.cd,x dir=both, x explicit] coordinates {
             (\amuExp  - \amuSM, 1) +- (\DamuExp , 0)
