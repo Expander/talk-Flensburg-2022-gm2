@@ -1,7 +1,7 @@
 \documentclass[12pt,notes]{beamer}
 
 \usecolortheme[dark,accent=yellow]{solarized}
-\beamertemplatetransparentcovered
+\setbeamercovered{transparent=0}
 \setbeamertemplate{navigation symbols}{} % remove navigation symbols
 % \setbeamertemplate{footline}[page number]
 \setbeamertemplate{footline}{
@@ -275,6 +275,21 @@
   \end{center}
 \end{frame}
 
+\note{
+  \begin{itemize}
+  \item Let me illustrate this effect with a video.
+  \item In the video you see a simulation of the rotation of a spiral galaxy.
+  \item If there would be no dark matter, the galaxy rotation would
+    look like in the right panel: The outer stars are relatively
+    slowly moving. This is not what one usually finds in rotating
+    galaxies!
+  \item Usually one finds that the outer stars move much faster, see
+    left panel. This can be explained with the existance of Dark
+    Matter (red) which fills the galaxy and changes the mass
+    distribution.
+  \end{itemize}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Magnetism}
@@ -289,13 +304,12 @@
 
 \note{
   \begin{itemize}
-  \item In the following I'll describe one interesting pheomenon,
-    which may be one possibility to shed light on the origin of Dark
-    Matter.
-  \item The phenomenon is called the ``anomalous magnetic moment''.
-  \item This phenomenon has to do with plain magnetism.
-  \item To explain what the magnetic moment is, lets start looking at
-    a conventional solid magnet (paramagnetism or ferromagnetism).
+  \item To shed some light on Dark Matter, we'll start our journey
+    with a conventional solid magnet (paramagnetism or
+    ferromagnetism).
+  \item We'll now look at a very interesting interesting pheomenon
+    regarding magnetism, which is called the ``anomalous magnetic
+    moment''.
   \end{itemize}
 }
 
@@ -499,10 +513,11 @@
   \begin{align*}
     \vec{m}_e &= g_e \frac{e}{2m_e}\vec{S}
   \end{align*}
-  Measurement vs.\ prediction from classical1 Quantum
+  Measurement vs.\ prediction from classical Quantum
   Mechanics:
   \begin{align*}
     g_e^\Exp &= \num{2.00231930436146}(58) \\
+    \pause
     g_e^{\text{QM}} &= 2
   \end{align*}
   Gigantic disagreement!
@@ -527,7 +542,8 @@
   \item The value of the magnetic moment of the electron is given by
     the elementary charge $e$, its mass $m_e$ and the so-called
     $g$-factor.
-  \item The classical quantum mechanics predicts $g_e=2$
+  \item The classical quantum mechanics predicts $g_e=2$, which is a
+    gigantic disagreement!
   \end{itemize}
 }
 
@@ -592,10 +608,12 @@
   \item To predict $g_e$: Use all known particles from the SM
   \item Then calculate how the electron interacts with a magnetic
     field.
-  \item The magnetic field is mediated by a photon
+  \item The magnetic field is mediated by a photon $\gamma$
   \item So, calculate the interaction strength of an electron with a photon
   \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
   Interaction of an electron with a magnetic field (mediated by a
@@ -612,13 +630,19 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Electron $g$-factor: Quantum Corrections}
-  Quantum corrections lead to deviations from the value $g_e=2$.
-  Relative deviation of $g_e$ from the value 2:
-  \begin{align*}
-    a_e := \frac{g_e-2}{2}
-  \end{align*}
+\note{
+  \begin{itemize}
+  \item The interaction of an electron with a photon can be described
+    with so-called Feynman diagrams.
+  \item The simplest diagram looks like this.
+  \item From this diagram one yields the classical quantum mechanics
+    prediction $g_e=2$
+  \end{itemize}
+}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Electron $g$-factor: Quantum Corrections}
   Feynman diagram with 1 loop:
   \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
@@ -635,13 +659,34 @@
       \draw[fill] (i1) circle (0.05); 
       \draw[fill] (i2) circle (0.05); 
     \end{tikzpicture}
-    && a_e^{\text{1-loop}} &\approx \num{0.00116141}
+    && a_e^{\text{1-loop}} &\approx \num{0.00116141} \\
+    &&&~\text{[Schwinger 1948]}
     % alpha = 1/137.035999206
     % g[a_] := 2 a + 2
     % g[0 + h alpha/(2 Pi) + h^2 (alpha/Pi)^2 (197/144 + Pi^2/12 + 3/4 Zeta[3] - Pi^2/2 Log[2])] // N[#,17]& // Expand
   \end{align*}
-  \hfill [Schwinger 1948]
+  Quantum corrections lead to deviations from the value $g_e=2$.
+  Relative deviation of $g_e$ from the value 2:
+  \begin{align*}
+    a_e := \frac{g_e-2}{2}
+  \end{align*}
 \end{frame}
+
+\note{
+  \begin{itemize}
+  \item The interaction of the photon with the ``sea'' of virtual
+    particles leads to so-called quantum corrections.
+  \item The simplest diagram which depicts such a quantum correction
+    contains one ``loop'' and has been calculated by Schwinger in
+    1948.
+  \item This quantum correction yields to a deviation from the value
+    $g_e=2$.
+  \item This relative \emph{deviation} is called the ``anomalous
+    magnetic moment'' and denoted as $a_e$.
+  \end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
   Feynman diagrams with 2 loops:
@@ -773,6 +818,7 @@
     a_e^\Exp &= (\numaeExp\pm \num{\DaeExp})\times 10^{-13} \\
     a_e^\SM  &= (\numaeSM \pm \num{\DaeSM})\times 10^{-13}
   \end{align*}
+  \pause
   Agreement within a relative uncertainty of \textcolor{red}{$\approx\num{e-10}$}
 \end{frame}
 
@@ -785,6 +831,8 @@
     world.
   \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{\insertsection}
   \begin{columns}
@@ -812,7 +860,7 @@
 
     \column{0.29\textwidth}
     % $a_e^{\Exp} - a_e^\SM = (-9.1 \pm 8.2)\times 10^{-13}$
-    $a_e^{\Exp} - a_e^\SM = (-9 \pm 9)\times 10^{-13}$
+    $a_e^{\Exp} - a_e^\SM \approx (-9 \pm 9)\times 10^{-13}$
 
   \end{columns}
 \end{frame}
@@ -882,13 +930,19 @@
 
 \note{
   \begin{itemize}
-  \item The experiment at FNAL consists of a proton $p^+$ beam, which
-    hits a target, where they produce pions $\pi^+$.
-  \item The pions decay into muons $\mu^+$.
-  \item The result is a beam of polarized muons, which enter the
-    ``Muon area''
-  \item The idea is now: Move the muons around a circle until they
-    decay, and infer $a_\mu$ from the decay products.
+  \item To measure $a_\mu$ we need to study muons in great detail
+  \item However, muons are difficult to produce and tend to decay very
+    quickly (mean life time: $\approx\SI{2}{\us}$)
+  \item To create and study them we need a particle accelerator
+    (FNAL)!
+    \begin{itemize}
+    \item Take a beam of protons $p^+$
+    \item Let them hit a target, where they produce pions $\pi^+$
+    \item The pions decay into muons $\mu^+$.
+    \end{itemize}
+  \item To study the muons, we must bring them to a high speed (close
+    to the speed of light), so that we have more time to study them
+    (time dillatation)
   \item We need a ring!
   \end{itemize}
 }
@@ -948,8 +1002,8 @@
 
 \note{
   \begin{itemize}
-  \item The polarized muons $\mu^+$ circle around the muon storage
-    ring
+  \item Idea: The polarized muons $\mu^+$ circle around the muon
+    storage ring
   \end{itemize}
 }
 

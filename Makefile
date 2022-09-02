@@ -1,5 +1,7 @@
 all: talk.pdf
 
+.PHONY: all clean distclean talk.pdf
+
 clean:
 	latexmk -C
 	-rm -f *.nav *.snm
