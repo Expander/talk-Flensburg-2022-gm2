@@ -4,7 +4,7 @@ all: talk.pdf
 
 clean:
 	latexmk -C
-	-rm -f *.nav *.snm
+	-rm -f *.nav *.snm *.run.xml
 
 distclean: clean
 	-rm -f talk.pdf
