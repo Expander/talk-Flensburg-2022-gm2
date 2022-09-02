@@ -23,7 +23,10 @@
 \usepackage{tikz}
 \usepackage{pgfplots}\pgfplotsset{compat=1.17}
 \usepackage{siunitx}
+\usepackage[backend=biber,natbib=true,style=numeric,sorting=none]{biblatex}
 \usepackage{multimedia}
+
+\addbibresource{talk.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1476,8 +1479,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[allowframebreaks]{References}
-  \bibliographystyle{abbrv}
-  \bibliography{talk}
+  %\bibliographystyle{abbrv}
+  \printbibliography
 \end{frame}
 
 \end{document}

@@ -1,6 +1,7 @@
 *~
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.fdb_latexmk
 *.fls
@@ -8,5 +9,6 @@
 *.nav
 *.out
 *.pdf
+*.run.xml
 *.snm
 *.toc
