@@ -148,8 +148,8 @@
 % d1 = 11e-9
 % a2 = 1165937e-9
 % d2 = 12e-9
-% combined = (a1/d1^2 + a2/d2^2) / (1/d1^2 + 1/d2^2)
-% dcombined = sqrt(1 / (1/d1^2 + 1/d2^2))
+% comb(a1, d1, a2, d2) = (a1/d1^2 + a2/d2^2) / (1/d1^2 + 1/d2^2)
+% dcomb(d1, d2) = sqrt(1 / (1/d1^2 + 1/d2^2))
 
 \newcommand{\amuCERNMuP}{11659110} % e-10
 \newcommand{\numamuCERNMuP}{\num{\amuCERNMuP}}
@@ -164,16 +164,18 @@
 \newcommand{\DamuCERN}{81} % e-10
 
 % BNL-E821
-\newcommand{\amuBNL}{11659209.1} % e-10
+\newcommand{\amuBNL}{11659208.0} % e-10
 \newcommand{\numamuBNL}{\num{\amuBNL}}
 \newcommand{\DamuBNL}{6.3}
 
 % FNAL 2021
+% https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.141801
 \newcommand{\amuFNAL}{11659204.0} % e-10
 \newcommand{\DamuFNAL}{5.4}
 \newcommand{\numamuFNAL}{\num{\amuFNAL}}
 
 % experimental, combined
+% https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.141801
 \newcommand{\amuExp}{11659206.1}
 \newcommand{\numamuExp}{\num{\amuExp}}
 \newcommand{\DamuExp}{4.1} % uncertainty
@@ -1112,7 +1114,7 @@
     a_\mu^{\text{BNL}} &= (\numamuBNL \pm \DamuBNL)\times 10^{-10} && (2006)~\text{\cite{Muong-2:2006rrc}}\\
     a_\mu^{\text{FNAL}} &= (\numamuFNAL \pm \DamuFNAL)\times 10^{-10} && (2021)~\text{\cite{PhysRevLett.126.141801}}
     \intertext{Combined:}
-    a_\mu^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10}
+    a_\mu^{\Exp} &= (\numamuExp \pm \DamuExp)\times 10^{-10} && (2021)~\text{\cite{PhysRevLett.126.141801}}
   \end{align*}
 \end{frame}
 
@@ -1202,6 +1204,7 @@
     \end{center}
 
     \column{0.29\textwidth}
+    % https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.141801
     $a_\mu^{\Exp} - a_\mu^\SM = (25.1 \pm 5.9)\times 10^{-10}$
 
     \bigskip
