@@ -1582,8 +1582,60 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Backup}
+
+\begin{frame}{}
+  \begin{center}
+    \Large Backup
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\insertsection}
+  Lamor frequency:
+  \begin{align*}
+    \omega_S &= -g\frac{Qe}{2m}B - (1-\gamma)\frac{Qe}{\gamma m}B
+  \end{align*}
+  Cyclotron frequency:
+  \begin{align*}
+    \omega_C &= -\frac{Qe}{\gamma m}B
+  \end{align*}
+  Measure difference:
+  \begin{align*}
+    \omega_a &= \omega_S - \omega_C = -\frac{g-2}{2}\frac{Qe}{m}B = -a\frac{Qe}{m}B
+  \end{align*}
+\end{frame}
+
+\note{
+  \begin{itemize}
+  \item Idea: measure the deviation $\omega_a$ of the muon's spin
+    frequency (Lamor frequency) from the cyclotron frequency.
+  \end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{\insertsection}
+  Measure the deviation of the muon's \textcolor{red}{Lamor frequency}
+  from the \textcolor{green}{cyclotron frequency}:
+  \begin{center}
+    \begin{tikzpicture}[very thick]
+      \pgfmathsetmacro{\radi}{2};
+      \pgfmathsetmacro{\leng}{0.8};
+      \draw (0,0) circle (2);
+      \foreach \N in {0,1,2,3} {%
+        \draw[fill]     ({-\N*90}:\radi) circle (0.1);
+        \draw[->,green] ({-\N*90}:\radi) -- ++({-(\N+1)*90}:\leng);
+        \draw[->,red]   ({-\N*90}:\radi) -- ++({-(\N+1-0.2*\N)*90}:\leng);
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[allowframebreaks]{References}
-  %\bibliographystyle{abbrv}
   \printbibliography
 \end{frame}
 
