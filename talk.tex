@@ -1074,6 +1074,42 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{\insertsection}
+  Measure the deviation of the muon's \textcolor{red}{spin precession
+    frequency} from the \textcolor{green}{cyclotron frequency}:
+  \begin{center}
+    \begin{tikzpicture}[very thick]
+      \pgfmathsetmacro{\radi}{2};
+      \pgfmathsetmacro{\leng}{0.8};
+      \draw (0,0) circle (2);
+      \foreach \N in {0,1,2,3} {%
+        \draw[fill]     ({-\N*90}:\radi) circle (0.1);
+        \draw[->,green] ({-\N*90}:\radi) -- ++({-(\N+1)*90}:\leng);
+        \draw[->,red]   ({-\N*90}:\radi) -- ++({-(\N+1-0.2*\N)*90}:\leng);
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\note{
+  \begin{itemize}
+  \item Idea: align the magnetic field so that if $g_\mu=2$
+    ($a_\mu=0$), the muon's spin would point exactly into the muon's
+    momentum direction ($\to$ rotation with cyclotron frequency
+    $\omega_C$)
+  \item Measure the deviation $\omega_a=\omega_S-\omega_C$ of the
+    muon's spin precession frequency (Lamor frequency $\omega_S$) from
+    the cyclotron frequency ($\omega_C$)
+  \item $\omega_a$ depends only on the anomalous magnetic moment
+    $a_\mu$
+  \item $\omega_a$ depends linearly on the magnetic field $B$
+  \item The magnetic field $B$ must be controlled/known to
+    sub-part-per-million (ppm) precision
+  \end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{\insertsection: Fermilab (FNAL)}
   \begin{columns}
     \column{0.4\textwidth}
@@ -1081,8 +1117,9 @@
     \begin{align*}
       \mu^+ \to e^+ + \nu_e + \bar{\nu}_\mu
     \end{align*}
-    Energy of $e^+$ depends on muon's spin direction $\to$ infer spin
-    precession frequency $\to$ infer $a_\mu$
+    Energy of $e^+$ depends on muon's spin direction
+    % $\to$ infer deviation $\omega_a$
+    $\to$ infer $a_\mu$
 
     \column{0.6\textwidth}
     \centering
@@ -1615,25 +1652,6 @@
   \item $\omega_a$ depends linearly on the magnetic field $B$
   \end{itemize}
 }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{\insertsection}
-  Measure the deviation of the muon's \textcolor{red}{Lamor frequency}
-  from the \textcolor{green}{cyclotron frequency}:
-  \begin{center}
-    \begin{tikzpicture}[very thick]
-      \pgfmathsetmacro{\radi}{2};
-      \pgfmathsetmacro{\leng}{0.8};
-      \draw (0,0) circle (2);
-      \foreach \N in {0,1,2,3} {%
-        \draw[fill]     ({-\N*90}:\radi) circle (0.1);
-        \draw[->,green] ({-\N*90}:\radi) -- ++({-(\N+1)*90}:\leng);
-        \draw[->,red]   ({-\N*90}:\radi) -- ++({-(\N+1-0.2*\N)*90}:\leng);
-      }
-    \end{tikzpicture}
-  \end{center}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
