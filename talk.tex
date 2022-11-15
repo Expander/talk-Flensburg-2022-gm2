@@ -35,6 +35,8 @@
 % default arrow style
 \tikzset{>=latex}
 
+\tikzset{snake it/.style={decorate, decoration=snake}}
+
 \tikzset{photon/.style={decorate, decoration={snake, segment length=2mm, amplitude=1mm}}}
 
 \tikzset{%
@@ -548,20 +550,27 @@
     $\num{3e-13}$.
   \item The classical quantum mechanics predicts for the electron
     $g_e=2$, which is a gigantic disagreement!
+  \item To understand how the sea of virtual particles changes the
+    effective value of $g_e$ we have to look at the mechanism that
+    describes the interaction between the electron's magnetic moment
+    and an external magnet.
   \end{itemize}
 }
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
   \begin{center}
     \begin{tikzpicture}
-      \draw[fill,green] (0,0) coordinate (e) circle (0.1) node[right] {$e$};
+      \draw[fill,green] (0,0) coordinate (e) circle (0.1) node[left] {$e$};
       \draw[very thick,green,->] ($(e)+(0,-0.5)$) -- ++(0,1);
-      \begin{scope}[shift={(4,2)},rotate={atan(2/4)}]
+      \coordinate (M) at (4,2);
+      \draw[yellow, snake it] (M) -- node[below right] {$\gamma$} (e);
+      \begin{scope}[shift={(M)},rotate={atan(2/4)}]
         \def\lmag{1.8}  % length of magnet
         \def\wmag{0.5}  % thickness of magnet
         \draw[fill, color=green] (0,\wmag/2) rectangle ++(-\lmag/2,-\wmag) node[black,midway,transform shape]{S};
         \draw[fill, color=red]   (0,\wmag/2) rectangle ++(+\lmag/2,-\wmag) node[black,midway,transform shape]{N};
       \end{scope}
+      \only<2->{
       \QC{(1,1)}{rand*180};
       \QC{(2,1)}{rand*180};
       \QC{(1,2)}{rand*180};
@@ -582,23 +591,30 @@
       % \foreach \N in {1,...,20} {%
       %   \QC{(rand*4,rand*3)}{rand*180};
       % }
+      }
     \end{tikzpicture}
   \end{center}
 \end{frame}
 
 \note{
   \begin{itemize}
-  \item To correctly predict $g_e$ one has to take into account
-    quantum corrections from virtual particles.
-  \item Idea:
-    \begin{itemize}
-    \item All the time virtual particles appear and dissappear.
-    \item Every particle is surrounded by virtual particles.
-    \item One does not directly interact with the electron; only
-      through a ``sea'' of virtual particles.
-    \item The existence of the virtual particles changes the effective
-      value of $g_e$ from the value $2$.
-  \end{itemize}
+  \item The currently best theory that describes the interaction of an
+    electron with an external magnet is the Standard Model of Particle
+    Physics (SM).
+  \item In the SM this interaction is described by the exchange of
+    photons $\gamma$.
+  \item However, one (i.e.\ a magnet) does never directly interact
+    with the electron, because all the time virtual particles appear
+    and dissappear.
+  \item These virtual particles in particular surround the electron
+    all the time.
+  \item So, one (a magnet) interacts with an electron only through a
+    ``sea'' of virtual particles.
+  \item The existence of this ``sea'' of virtual particles changes the
+    effective value of $g_e$ from the value $2$.
+  \item So, to correctly predict $g_e$ one has to take into account
+    the interaction of the photon with the ``sea'' of virtual
+    particles, so-called quantum corrections.
   \end{itemize}
 }
 
@@ -614,14 +630,6 @@
 
 \note{
   \begin{itemize}
-  \item To understand how the sea of virtual particles changes the
-    effective value of $g_e$ we have to look at the mechanism that
-    describes the interaction between the electron's magnetic moment
-    and an external magnet.
-  \item The currently best theory that describes this interaction is
-    the Standard Model of Particle Physics.
-  \item In the Standard Model this interaction is described by the
-    exchange of photons $\gamma$.
   \item If we know all particles, we can calculate the quantum
     corrections.
   \item To predict $g_e$: Use all known particles from the SM
