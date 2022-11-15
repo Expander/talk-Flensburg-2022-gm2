@@ -35,9 +35,7 @@
 % default arrow style
 \tikzset{>=latex}
 
-\tikzset{snake it/.style={decorate, decoration=snake}}
-
-\tikzset{photon/.style={decorate, decoration={snake, segment length=2mm, amplitude=1mm}}}
+\tikzset{photon/.style={decorate, decoration={snake, segment length=3mm, amplitude=0.8mm}}}
 
 \tikzset{%
     ->-/.style={postaction={decorate},decoration={%
@@ -563,7 +561,7 @@
       \draw[fill,green] (0,0) coordinate (e) circle (0.1) node[left] {$e$};
       \draw[very thick,green,->] ($(e)+(0,-0.5)$) -- ++(0,1);
       \coordinate (M) at (4,2);
-      \draw[yellow, snake it] (M) -- node[below right] {$\gamma$} (e);
+      \draw[yellow, photon] (M) -- node[below right] {$\gamma$} (e);
       \begin{scope}[shift={(M)},rotate={atan(2/4)}]
         \def\lmag{1.8}  % length of magnet
         \def\wmag{0.5}  % thickness of magnet
@@ -630,21 +628,23 @@
 
 \note{
   \begin{itemize}
-  \item If we know all particles, we can calculate the quantum
-    corrections.
-  \item To predict $g_e$: Use all known particles from the SM
-  \item Then calculate how the electron interacts with a magnetic
-    field.
-  \item The magnetic field is mediated by a photon $\gamma$
-  \item So, calculate the interaction strength of an electron with a photon
+  \item To calculate the quantum corrections we have to take into
+    account all known particles.
+  \item All known particles and their interactions are described by
+    the SM.
+  \item So, to predict $g_e$ one must take into account all known
+    particles from the SM which make up the ``sea'' of virtual
+    particles.
+  \item The known particles described by the SM are: Electron, Muon,
+    Tau, Quarks, Gauge bosons and Higgs boson.
   \end{itemize}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
-  Interaction of an electron with a magnetic field (mediated by a
-  photon):
+  Direct interaction of an electron with a magnetic field (mediated by
+  a photon):
   \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
       \coordinate (a) at (0,0);
@@ -653,7 +653,7 @@
       \draw[->-] (a) -- (1,-1) node[below right] {$e$};
       \draw[fill] (a) circle (0.05); 
     \end{tikzpicture}
-    && g_e &= 2
+    && &\Rightarrow & g_e &= 2
   \end{align*}
 \end{frame}
 
@@ -662,6 +662,8 @@
   \item The interaction of an electron with a photon can be described
     with so-called Feynman diagrams.
   \item The simplest diagram looks like this.
+  \item It describes the ``direct'' interaction of a magnetic field
+    with an electron (mediated by a photon)
   \item From this diagram one yields the classical quantum mechanics
     prediction $g_e=2$
   \end{itemize}
@@ -670,12 +672,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
-  Quantum corrections lead to deviations from the value $g_e=2$.
-  Relative deviation of $g_e$ from the value 2:
-  \begin{align*}
-    a_e := \frac{g_e-2}{2}
-  \end{align*}
-  Feynman diagram with 1 loop:
+  Next order (1-loop) quantum correction:
   \begin{align*}
     \begin{tikzpicture}[thick,baseline={(0,0)}]
       \coordinate (a) at (0,0);
@@ -691,11 +688,16 @@
       \draw[fill] (i1) circle (0.05); 
       \draw[fill] (i2) circle (0.05); 
     \end{tikzpicture}
-    && a_e^{\text{1-loop}} &\approx \num{0.00116141} \\
+    && g_e^{\text{1-loop}} &\approx \num{2.00232282} \\
+    % && a_e^{\text{1-loop}} &\approx \num{0.00116141} \\
     &&&~\text{[Schwinger 1948]}
     % alpha = 1/137.035999206
     % g[a_] := 2 a + 2
     % g[0 + h alpha/(2 Pi) + h^2 (alpha/Pi)^2 (197/144 + Pi^2/12 + 3/4 Zeta[3] - Pi^2/2 Log[2])] // N[#,17]& // Expand
+  \end{align*}
+  Relative deviation:
+  \begin{align*}
+    a_e^{\text{1-loop}} := \frac{g_e^{\text{1-loop}}-2}{2} &\approx \num{0.00116141}
   \end{align*}
 \end{frame}
 
@@ -708,8 +710,8 @@
     1948.
   \item This quantum correction yields to a deviation from the value
     $g_e=2$.
-  \item This relative \emph{deviation} is called the ``anomalous
-    magnetic moment'' and denoted as $a_e$.
+  \item This relative deviation is called the ``anomalous magnetic
+    moment'' and denoted as $a_e$.
   \end{itemize}
 }
 
@@ -730,7 +732,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Electron $g$-factor: Quantum Corrections}
-  Feynman diagrams with 2 loops:
+  Quantum corrections with 2 loops:
 
   \bigskip
   \begin{tabular}{ccc}
@@ -844,7 +846,9 @@
 
 \note{
   \begin{itemize}
-  \item Theorists must calculate millions of so-called Feyman diagrams.
+  \item The next higher order quantum corrections look like this.
+  \item Eventually theorists must calculate millions of these
+    so-called Feyman diagrams.
   \item They represent extremely complicated integrals to be solved.
   \end{itemize}
 }
@@ -856,8 +860,8 @@
 \begin{frame}{\insertsection}
   Comparison measurement vs.\ multi-loop prediction for $a_e$:
   \begin{align*}
-    a_e^\Exp &= (\numaeExp\pm \num{\DaeExp})\times 10^{-13} \\
-    a_e^\SM  &= (\numaeSM \pm \num{\DaeSM})\times 10^{-13}
+    a_e^\Exp &= (\numaeExp\pm \num{\DaeExp})\times \num{e-13} \\
+    a_e^\SM  &= (\numaeSM \pm \num{\DaeSM})\times \num{e-13}
   \end{align*}
   \pause
   Agreement within a relative uncertainty of \textcolor{red}{$\approx\num{e-10}$}
@@ -1053,7 +1057,7 @@
 
 \begin{frame}{\insertsection: Fermilab (FNAL)}
   \begin{center}
-    \movie[width=0.9\textwidth,autostart,loop]{\includegraphics[width=0.9\textwidth]{videos/Muon-g-2-moving.png}}{videos/Muon-g-2-moving.mp4}
+    \movie[width=0.9\textwidth,autostart,loop,showcontrols]{\includegraphics[width=0.9\textwidth]{videos/Muon-g-2-moving.png}}{videos/Muon-g-2-moving.mp4}
     \cite{muon-g-2-moving}
   \end{center}
 \end{frame}
