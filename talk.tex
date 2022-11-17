@@ -488,7 +488,7 @@
     \begin{tikzpicture}
       \fill[even odd rule,inner color=blue,outer color=solarizedRebase03!100] (0,0) circle (3);
       \coordinate (n) at (0,0);
-      \coordinate (e) at (2,0.5);
+      \coordinate (e) at (1.5,-0.5);
       \draw[fill,red] (n) circle (0.1);
       \draw[fill,green] (e) circle (0.05);
       \only<1>{%
@@ -496,8 +496,8 @@
         \node[below,green] at (e) {electron};
       }%
       \only<2>{%
-        \draw[very thick,red,->] ($(n)+(0,-1)$) -- ++(0,2);
-        \draw[very thick,green,->] ($(e)+(0,-0.5)$) -- ++(0,1);
+        \draw[very thick,red,->] ($(n)+(0,-0.5)$) -- ++(0,1);
+        \draw[very thick,green,->] ($(e)+(0,-1)$) -- ++(0,2);
       }%
       \only<1-2>{%
         \draw[ultra thick,blue,->] (5,-1.5) -- node[right] {$\vec{m}$} ++(0,3);
